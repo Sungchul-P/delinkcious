@@ -18,10 +18,10 @@ spec:
         app: manager
     spec:
       containers:
-      - name: social-graph-manager
-        image: g1g1/delinkcious-social-graph:0.2
-        ports:
-        - containerPort: 9090
+        - name: social-graph-manager
+          image: devnori/delinkcious-social-graph:0.2
+          ports:
+            - containerPort: 9090
 ---
 apiVersion: v1
 kind: Service
@@ -29,7 +29,7 @@ metadata:
   name: social-graph-manager
 spec:
   ports:
-  - port: 9090
+    - port: 9090
   selector:
     svc: social-graph
     app: manager
