@@ -18,6 +18,8 @@ jobs:
       - run:
           name: Test everything
           command: ginkgo -r -race -failFast -progress
+      - setup_remote_docker:
+          version: 18.06.0-ce
       - run:
           name: build and push Docker images
           shell: /bin/bash
